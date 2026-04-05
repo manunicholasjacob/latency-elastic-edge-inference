@@ -1,0 +1,7 @@
+model,controller,p90_med_median,slo_violation_pct_med
+mobilenet_v3_small_CIFAR100,mpc_lite,2.0708406999999998,0.0
+mobilenet_v3_small_CIFAR100,pi_slo,2.14695525,0.0
+mobilenet_v3_small_CIFAR100,reactive,2.152426775,0.0
+resnet18_CIFAR100,mpc_lite,8.068655849999999,0.0
+resnet18_CIFAR100,reactive,11.20860495,0.0
+resnet18_CIFAR100,pi_slo,11.381358125,0.0
