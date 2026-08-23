@@ -1,0 +1,28 @@
+{
+  "title": "Latency-Elastic Edge Inference: Predictive Thread-Level QoS on Raspberry Pi 5",
+  "upload_type": "software",
+  "license": "mit",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "Jacob, Manu Nicholas",
+      "orcid": "0009-0007-6589-6572"
+    }
+  ],
+  "keywords": [
+    "edge inference",
+    "quality of service",
+    "thread control",
+    "tail latency",
+    "predictive control",
+    "Raspberry Pi 5"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/manunicholasjacob/latency-elastic-edge-inference",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ]
+}
