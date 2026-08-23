@@ -1,6 +1,5 @@
 # Latency-Elastic Edge Inference: Predictive Thread-Level QoS on Raspberry Pi 5
 
-[![Paper](https://img.shields.io/badge/Paper-FGCS%20Submitted-blue)](https://github.com/manunicholasjacob/latency-elastic-edge-inference)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21844865.svg)](https://doi.org/10.5281/zenodo.21844865)
@@ -8,7 +7,9 @@
 **Author:** Manu Nicholas Jacob  
 **Email:** manunicholasjacob@gmail.com  
 **ORCID:** [0009-0007-6589-6572](https://orcid.org/0009-0007-6589-6572)  
-**Submitted to:** Future Generation Computer Systems (FGCS), Elsevier
+**Status:** Submitted to a journal in 2025 and not pursued further. The
+measurements and the controller stand; the manuscript does not. See "On the
+manuscript" below.
 
 ---
 
@@ -18,9 +19,22 @@ This repository contains all code, experimental logs, and analysis notebooks for
 
 > **Latency-Elastic Edge Inference: Predictive Thread-Level QoS on Raspberry Pi 5**  
 > Manu Nicholas Jacob  
-> *Future Generation Computer Systems*, submitted 2025.
+> Manuscript, 2025. Not under review.
 
-**Key result:** A Raspberry Pi 5 running ResNet-50 inference misses 99.8% of its 80 ms latency SLOs under high Poisson load with a reactive controller. MPC-Lite — a receding-horizon thread allocator using a 5-step prediction horizon — reduces this to **0.0% violations** and cuts p99 tail latency by **3.4×** (30.0 ms vs. 102.9 ms).
+**Key result:** A Raspberry Pi 5 running ResNet-50 inference misses 99.8% of its 80 ms latency SLOs under high Poisson load with a reactive controller. MPC-Lite, a receding-horizon thread allocator using a 5-step prediction horizon, reduces this to **0.0% violations** and cuts p99 tail latency by **3.4x** (30.0 ms vs. 102.9 ms).
+
+---
+
+## On the manuscript
+
+This work was written up and submitted to a journal in 2025. It did not go
+forward, and it is not currently under review anywhere. I have left the
+repository up because the measurements are real and reproducible and the
+controller does what the numbers below say it does, but nothing here should be
+read as a paper in press.
+
+If you want the current state of this research programme, it is at
+[manunicholasjacob.com/research](https://manunicholasjacob.com/research).
 
 ---
 
@@ -61,7 +75,7 @@ latency-elastic-edge-inference/
 ├── paper/
 │   ├── paper4_tier2.tex            # Main LaTeX source
 │   ├── cover_letter.tex            # Submission cover letter
-│   ├── research_highlights.tex     # FGCS research highlights
+│   ├── research_highlights.tex     # journal research highlights
 │   └── figures/                    # All 8 paper figures (PDF)
 └── README.md
 ```
@@ -107,7 +121,7 @@ python calibration/mu_k_calibration.py --output logs/calibration/mu_k.json
 python calibration/thermal_model_fit.py --output logs/calibration/thermal_params.json
 ```
 
-### Step 2: Run All Experiments (~6–8 hours total)
+### Step 2: Run All Experiments (~6-8 hours total)
 ```bash
 # Runs all 12 experiment groups sequentially
 bash experiments/run_all.sh
@@ -153,12 +167,12 @@ python 07_online_controller.py --mode reactive
 
 | Experiment | MPC-Lite | Equal Share | Reactive |
 |------------|----------|-------------|----------|
-| SLO violations (moderate load) | **0.0%** | 1.15% | — |
-| p99 latency (moderate load) | **30.0 ms** | 102.9 ms | — |
+| SLO violations (moderate load) | **0.0%** | 1.15% | - |
+| p99 latency (moderate load) | **30.0 ms** | 102.9 ms | - |
 | Goodput at high load | **13.6%** | 0.2% | 0.2% |
-| Mean latency, bursty On-Off | **5.4 ms** | 17.9 ms | — |
-| Long-run violation rate (60 min) | 33.2±1.0% | — | — |
-| Controller CPU overhead | **0.9%** | — | — |
+| Mean latency, bursty On-Off | **5.4 ms** | 17.9 ms | - |
+| Long-run violation rate (60 min) | 33.2±1.0% | - | - |
+| Controller CPU overhead | **0.9%** | - | - |
 
 ---
 
@@ -187,13 +201,13 @@ A key concept introduced in this paper: **λ\* = max_k μ(k)** is the arrival ra
 If you use this code or data in your research, please cite:
 
 ```bibtex
-@article{jacob2025latency,
-  title={Latency-Elastic Edge Inference: Predictive Thread-Level {QoS} on {Raspberry Pi 5}},
-  author={Jacob, Manu Nicholas},
-  journal={Future Generation Computer Systems},
-  year={2025},
-  note={Submitted},
-  url={https://github.com/manunicholasjacob/latency-elastic-edge-inference}
+@software{jacob_latency_elastic,
+  author  = {Jacob, Manu Nicholas},
+  title   = {Latency-Elastic Edge Inference: Predictive Thread-Level QoS on
+             Raspberry Pi 5},
+  year    = {2026},
+  doi     = {10.5281/zenodo.21844865},
+  url     = {https://github.com/manunicholasjacob/latency-elastic-edge-inference}
 }
 ```
 
