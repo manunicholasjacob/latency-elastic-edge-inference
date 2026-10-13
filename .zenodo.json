@@ -1,5 +1,6 @@
 {
   "title": "Latency-Elastic Edge Inference: Predictive Thread-Level QoS on Raspberry Pi 5",
+  "description": "Code, experiment logs and analysis notebooks for predictive thread-level quality of service (MPC-Lite, a model-predictive thread allocator) for DNN inference on a Raspberry Pi 5 (Arm Cortex-A76). The 2025 manuscript is not under review; the measurements and the controller are released as an artifact.",
   "upload_type": "software",
   "license": "mit",
   "access_right": "open",
